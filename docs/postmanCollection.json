@@ -1,0 +1,1023 @@
+{
+	"info": {
+		"_postman_id": "3fc4fde7-447f-47d2-914d-9f54af59ffbd",
+		"name": "Job Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25454429"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Get Jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base-url}}/jobs",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "include",
+									"value": "applications[user]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Jobs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ac49445c-ce76-44c8-adf4-f92c78ee7ee1.mock.pstmn.io/jobs?page=5&perPage=3",
+									"protocol": "https",
+									"host": [
+										"ac49445c-ce76-44c8-adf4-f92c78ee7ee1",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"jobs"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "5"
+										},
+										{
+											"key": "perPage",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 05:50:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "595"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=34b4fef01994b3b0"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=644e861333fc0515"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1674625867"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"253-52lJ9ZAbBorgiqeO9GhpO4WzPJM\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"data\": {\n        \"jobs\": [\n            {\n                \"title\": \"Data Analyst\",\n                \"description\": \"1+ year experience required\"\n            },\n            {\n                \"title\": \"Software Engineer\",\n                \"description\": \"1+ year experience required\"\n            },\n            {\n                \"title\": \"HR Executive Intern\",\n                \"description\": \"Only for freshers\"\n            }\n        ],\n        \"meta\": {\n            \"perPage\": \"3\",\n            \"page\": \"5\",\n            \"totalDocs\": \"40\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Job",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"SDE new 2\",\n    \"description\": \"Fresher Only \"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/jobs",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\" : \"xyz\",\n    \"description\" : \"abcd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ac49445c-ce76-44c8-adf4-f92c78ee7ee1.mock.pstmn.io/api/v1/jobs",
+									"protocol": "https",
+									"host": [
+										"ac49445c-ce76-44c8-adf4-f92c78ee7ee1",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"api",
+										"v1",
+										"jobs"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"code\":  201\n}"
+						},
+						{
+							"name": "Post Job Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\" : \"xyz\",\n    \"description\" : \"abcd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/jobs",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"code\":  201\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"basic\",\n    \"description\": \"Fresher Only\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/jobs/:id",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01GSAPAR4HKBBF2TZ4XB4GXWSJ"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Job",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\" : \"xyz\",\n    \"decription\" : \"abcd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/jobs/:id",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"data\": {\n        \"jobs\": [\n            {\n                \"title\": \"Data Analyst\",\n                \"description\": \"1+ year experience required\"\n            }\n        ], \"meta\":{}\n    }\n}\n"
+						}
+					]
+				},
+				{
+					"name": "Job Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/jobs/:id",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01GSB5NK55A81MSBBSZ42A0GSM"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Job Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/jobs/:id",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 06:44:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "550"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=1abff11880cbee72"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=509984db429127bf"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "118"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1674629081"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"226-v0z4sdey+cxB5ZqGBZnxo2907/M\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"data\": {\n        \"Job Details\": {\n            \"title\": \"SDE\",\n            \"description\": \"+1 year experience\"\n        },\n        \"applications\": [\n            {\n                \"name\": \"M Zaid\",\n                \"email\": \"mzaid@gmail.com\"\n            },\n            {\n                \"name\": \"piyush\",\n                \"email\": \"piyush@gmail.com\"\n            },\n            {\n                \"name\": \"devansh\",\n                \"email\": \"devansh@gmail.com\"\n            }\n        ],\n        \"meta\": {}\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Apply Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"jobId\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}applications?id=01GRVAEKHCMNMRPVDYC5DY37P4",
+							"host": [
+								"{{base-url}}applications"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "01GRVAEKHCMNMRPVDYC5DY37P4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/applications",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Application",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/applications",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"data\": {\n        \"jobs\": [\n            {\n                \"title\": \"Data Analyst\",\n                \"description\": \"1+ year experience required\"\n            },\n            {\n                \"title\": \"Software Engineer\",\n                \"description\": \"1+ year experience required\"\n            },\n            {\n                \"title\": \"HR Executive Intern\",\n                \"description\": \"Only for freshers\"\n            }\n        ],\n        \"meta\": {\n           \n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Sign Up",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().data.user.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"okok\",\n    \"email\" : \"b1@gmail.com\",\n    \"password\" : \"zaid1234\",\n    \"role\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/signup",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"token\", pm.response.json().data.user.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\" : \"b1@gmail.com\",\n    \"password\" : \"zaid1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/login",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJpYXQiOjE2NzY0NDI4ODEsImV4cCI6MTcwNzk3ODg4MX0.WtmOoAhIF8f0rI0lxwg-lIUTWMLmHmZ415iT7vc8VZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\" : \"new1111111@gmail.com\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/forgot-password",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\" : \"21111111\",\n    \"confirmPassword\" : \"21111111\",\n    \"otp\": \"805172\",\n    \"email\" :  \"new1111111@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/reset-password",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Admin Login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"admin.tester@squareboat.com\",\n    \"password\" : \"admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/auth/admin/login",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"auth",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/admin/users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/admin/users?page=5&perPage=7&=01GSA842BDGTQQF36X2KKXHB9J",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "5"
+										},
+										{
+											"key": "perPage",
+											"value": "7"
+										},
+										{
+											"key": null,
+											"value": "01GSA842BDGTQQF36X2KKXHB9J"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"data\": {\n        \"users\": [\n            {\n                \"name\": \"hamid\",\n                \"email\": \"hamid@gmail.com\"\n            },\n            {\n                \"name\": \"zaid\",\n                \"email\": \"zaid@squareboat.com\"\n            }\n        ]\n    },\n    \"meta\": {\n        \"perPage\": \"3\",\n        \"currentPage\": \"3\",\n        \"totalDocs\": \"12\", /*total Jobs in DB*/\n        \"totalPages\": 4\n    }\n}\n\n\n\n\n\n\n\n\n"
+						}
+					]
+				},
+				{
+					"name": "Remove Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/jobs/:id",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "01GS9TGEHDCRSMNW4W41PMPCF3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Job",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/jobs/:id",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\":204\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYyLCJpYXQiOjE2NzY0NjY2MTQsImV4cCI6MTcwODAwMjYxNH0.O0LsOBLSAsqRtUSpzWJhCACMFSbM-L6A6zscTO-UW-4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/admin/users/01GSAF8VQKMY9QMD8BSS7BSB8C",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"01GSAF8VQKMY9QMD8BSS7BSB8C"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Job",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/admin/users/:id",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"code\": 204\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "auth-base-url",
+			"value": "http://127.0.0.1:8080/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "jobs-base-url",
+			"value": "http://127.0.0.1:8080/api/v1",
+			"type": "string"
+		}
+	]
+}

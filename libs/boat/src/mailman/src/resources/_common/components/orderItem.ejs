@@ -1,0 +1,33 @@
+<mj-section padding-top="0px" padding-left="0px">
+    <mj-group background-color=" #e6e7ed" margin="10px" padding="10px" width="90%" css-class="card">
+        <mj-column padding="20px 0px" width="20%">
+            <mj-image padding-left="20px" padding="0px" height="100px"
+                src="<%= process.env.APP_IMAGE_BASE_URL + '/' + item.meta.productInfo.imgSlug %>" />
+        </mj-column>
+        <mj-column padding="20px 0px" width="55%">
+            <mj-text padding-bottom="0px" padding-top="5px">
+                <strong style="color: #222ac7">
+                    <%= item.meta.productInfo.name %>
+                </strong>
+            </mj-text>
+            <mj-text padding-bottom="0px">
+                Size: <strong>
+                    <%= item.meta.productInfo.unitSize %>
+                        <%= item.meta.productInfo.unitMeasure %>
+                </strong>
+            </mj-text>
+            <mj-text padding-bottom="0px">
+                Quantity: <strong>
+                    <%= item.quantity %>
+                </strong>
+            </mj-text>
+        </mj-column>
+        <mj-column padding="20px 0px" width="25%">
+            <mj-text padding-bottom="0px">
+                <strong>
+                    CAD <%= item.meta.finalPayables.subtotalAmount/100 %>
+                </strong>
+            </mj-text>
+        </mj-column>
+    </mj-group>
+</mj-section>

@@ -1,0 +1,20 @@
+<mj-section padding="0px">
+  <% for(let component of _fields) { %>
+  <mj-section padding="0px">
+    <mj-column>
+      <% if (component.type==='action' ) { %> <%- include('./components/button',
+      component.payload); %> <% } else if (component.type==='link' ) { %> <%-
+      include('./components/link', component.payload); %> <% } else if
+      (component.type==='line' ) { %> <%- include('./components/line',
+      component.payload); %> <% } else if (component.type==='image' ) { %> <%-
+      include('./components/image', component.payload); %> <% } else if
+      (component.type==='divider' ) { %> <%- include('./components/divider',
+      component.payload); %> <% } else if (component.type==='greeting' ) { %>
+      <%- include('./components/greeting', component.payload); %> <% } else if
+      (component.type==='table' ) { %> <%- include('./components/table',
+      component.payload); %> <% } else if (component.type==='regard' ) { %> <%-
+      include('./components/regards', component.payload); %> <% } %>
+    </mj-column>
+  </mj-section>
+  <% } %>
+</mj-section>

@@ -1,0 +1,101 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/control-panel/src",
+  "monorepo": true,
+  "root": "apps/control-panel",
+  "projects": {
+    "boat": {
+      "type": "library",
+      "root": "libs/boat",
+      "entryFile": "index",
+      "sourceRoot": "libs/boat/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/boat/tsconfig.lib.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "control-panel": {
+      "type": "application",
+      "root": "apps/control-panel",
+      "entryFile": "main",
+      "sourceRoot": "apps/control-panel/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/control-panel/tsconfig.app.json"
+      }
+    },
+    "auth-apis": {
+      "type": "application",
+      "root": "apps/auth-apis",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth-apis/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth-apis/tsconfig.app.json"
+      }
+    },
+    "jobs-apis": {
+      "type": "application",
+      "root": "apps/jobs-apis",
+      "entryFile": "main",
+      "sourceRoot": "apps/jobs-apis/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/jobs-apis/tsconfig.app.json"
+      }
+    },
+    "users-apis": {
+      "type": "application",
+      "root": "apps/users-apis",
+      "entryFile": "main",
+      "sourceRoot": "apps/users-apis/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users-apis/tsconfig.app.json"
+      }
+    },
+    "users": {
+      "type": "library",
+      "root": "libs/users",
+      "entryFile": "index",
+      "sourceRoot": "libs/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/users/tsconfig.lib.json"
+      }
+    },
+    "jobs": {
+      "type": "library",
+      "root": "libs/jobs",
+      "entryFile": "index",
+      "sourceRoot": "libs/jobs/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/jobs/tsconfig.lib.json"
+      }
+    },
+    "applications": {
+      "type": "library",
+      "root": "libs/applications",
+      "entryFile": "index",
+      "sourceRoot": "libs/applications/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/applications/tsconfig.lib.json"
+      }
+    },
+    "application-apis": {
+      "type": "application",
+      "root": "apps/application-apis",
+      "entryFile": "main",
+      "sourceRoot": "apps/application-apis/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/application-apis/tsconfig.app.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": false
+  }
+}
